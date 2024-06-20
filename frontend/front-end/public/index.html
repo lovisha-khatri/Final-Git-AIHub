@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Tools</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional custom styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #fceabb, #f8b500);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #4CAF50;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .tool-section {
+            margin-bottom: 20px;
+        }
+
+        .tool-section h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .tool-section textarea {
+            width: 100%;
+            height: 120px;
+            padding: 10px;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .tool-section button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .tool-section button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .tool-section pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            border: 1px solid #ccc;
+            font-size: 0.9rem;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        @media (max-width: 768px) {
+            .tool-section {
+                width: 95%;
+            }
+
+            .tool-section textarea {
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to Code Tools</h1>
+            <p>Your one-stop solution for code formatting, validation, conversion, and visualization.</p>
+            <p>Our tools are designed to streamline your coding process, ensuring that your code is clean, efficient, and error-free. Whether you are a beginner or an experienced developer, our easy-to-use tools can help you write better code.</p>
+        </header>
+
+        <section class="tool-section formatter">
+            <h2>Code Formatter</h2>
+            <textarea id="formatterInput" placeholder="Paste your code here..."></textarea>
+            <button onclick="formatCode()">Format</button>
+            <pre id="formatterOutput"></pre>
+        </section>
+
+        <section class="tool-section validator">
+            <h2>Code Validator</h2>
+            <textarea id="validatorInput" placeholder="Paste your code here..."></textarea>
+            <button onclick="validateCode()">Validate</button>
+            <pre id="validatorOutput"></pre>
+        </section>
+
+        <section class="tool-section converter">
+            <h2>Data Converter</h2>
+            <textarea id="converterInput" placeholder="Paste your data here..."></textarea>
+            <button onclick="convertData()">Convert</button>
+            <pre id="converterOutput"></pre>
+        </section>
+
+        <section class="tool-section visualizer">
+            <h2>Data Visualizer</h2>
+            <textarea id="visualizerInput" placeholder="Paste your data here..."></textarea>
+            <button onclick="visualizeData()">Visualize</button>
+            <pre id="visualizerOutput"></pre>
+        </section>
+    </div>
+
+    <script>
+        function formatCode() {
+            const input = document.getElementById('formatterInput').value;
+            const formattedCode = input.replace(/\s+/g, ' ').trim();
+            document.getElementById('formatterOutput').innerText = formattedCode;
+        }
+
+        function validateCode() {
+            const input = document.getElementById('validatorInput').value;
+            const isValid = input.includes(';'); // Dummy validation
+            document.getElementById('validatorOutput').innerText = isValid ? 'Code is valid' : 'Code is invalid';
+        }
+
+        function convertData() {
+            const input = document.getElementById('converterInput').value;
+            const convertedData = input.toUpperCase(); // Dummy conversion
+            document.getElementById('converterOutput').innerText = convertedData;
+        }
+
+        function visualizeData() {
+            const input = document.getElementById('visualizerInput').value;
+            const visualizedData = input.split('').reverse().join(''); // Dummy visualization
+            document.getElementById('visualizerOutput').innerText = visualizedData;
+        }
+    </script>
+</body>
+</html>
